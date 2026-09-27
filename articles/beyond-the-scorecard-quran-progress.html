@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beyond the Scorecard — Hira Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --dark-green: #243030;
+    --medium-green: #128559;
+    --light-green: #9edea3;
+    --cream: #fff2e5;
+    --line: rgba(36, 48, 48, 0.12);
+    --line-strong: rgba(36, 48, 48, 0.22);
+    --max: 700px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--dark-green);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--light-green); color: var(--dark-green); }
+  .arabic {
+    font-family: 'Amiri', serif;
+    direction: rtl;
+    unicode-bidi: isolate;
+  }
+  a { color: var(--medium-green); }
+  
+  /* ---------- header / brand bar ---------- */
+  .brandbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.4rem 1.5rem 1.6rem;
+  }
+  .brandbar img {
+    height: 42px;
+    width: auto;
+    display: block;
+  }
+
+  /* ---------- hero ---------- */
+  .hero {
+    position: relative;
+    padding: 2.5rem 1.5rem 4rem;
+    text-align: center;
+    border-bottom: 1px solid var(--line-strong);
+  }
+  .hero-letters {
+    font-family: 'Amiri', serif;
+    direction: rtl;
+    font-size: clamp(3.2rem, 13vw, 6rem);
+    color: transparent;
+    -webkit-text-stroke: 1.4px rgba(36, 48, 48, 0.35);
+    line-height: 1;
+    margin: 0 0 1.6rem;
+    letter-spacing: 0.5rem;
+    display: inline-flex;
+    gap: 0.9rem;
+  }
+  .hero-letters .accent {
+    -webkit-text-stroke: 0;
+    color: var(--medium-green);
+  }
+  .hero-eyebrow {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: var(--medium-green);
+    margin: 0 0 1.3rem;
+  }
+  .hero h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5.2vw, 3rem);
+    line-height: 1.16;
+    max-width: 20ch;
+    margin: 0 auto 1.2rem;
+    color: var(--dark-green);
+  }
+  .hero p.lede {
+    max-width: 48ch;
+    margin: 0 auto;
+    color: rgba(36, 48, 48, 0.72);
+    font-size: 1.08rem;
+    line-height: 1.6;
+  }
+
+  /* ---------- article shell ---------- */
+  main {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 4rem 1.5rem 6rem;
+  }
+  .intro {
+    font-weight: 500;
+    font-size: 1.28rem;
+    line-height: 1.55;
+    color: var(--dark-green);
+    border-left: 3px solid var(--medium-green);
+    padding-left: 1.3rem;
+    margin: 0 0 4.5rem;
+  }
+  section.block { margin-bottom: 4.4rem; }
+  .block-head {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin-bottom: 1.3rem;
+  }
+  .icon {
+    flex: none;
+    width: 34px;
+    height: 34px;
+    color: var(--medium-green);
+  }
+  .icon svg { width: 100%; height: 100%; }
+  h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.45rem;
+    margin: 0;
+    color: var(--dark-green);
+  }
+  p { margin: 0 0 1.15rem; color: rgba(36, 48, 48, 0.82); }
+  p:last-child { margin-bottom: 0; }
+  strong { color: var(--dark-green); font-weight: 600; }
+  .rule {
+    border: none;
+    border-top: 1px solid var(--line-strong);
+    margin: 4.4rem 0;
+  }
+
+  /* ---------- comparison table ---------- */
+  .table-wrap { border-top: 1px solid var(--line-strong); }
+  .trow {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 1.4rem;
+    padding: 1.15rem 0;
+    border-bottom: 1px solid var(--line);
+    align-items: baseline;
+  }
+  .trow .sounds {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--medium-green);
+  }
+  .trow .why {
+    font-size: 0.97rem;
+    color: rgba(36, 48, 48, 0.78);
+    line-height: 1.55;
+  }
+
+  /* ---------- list styling ---------- */
+  ul.custom-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+  }
+  ul.custom-list li {
+    position: relative;
+    padding-left: 1.8rem;
+    margin-bottom: 1rem;
+    color: rgba(36, 48, 48, 0.82);
+  }
+  ul.custom-list li::before {
+    content: "✨";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 0.9rem;
+  }
+
+  /* ---------- quote block ---------- */
+  blockquote.quote {
+    font-style: italic;
+    background: rgba(255, 255, 255, 0.45);
+    border-left: 3px solid var(--medium-green);
+    margin: 1.8rem 0;
+    padding: 1.2rem 1.5rem;
+    color: var(--dark-green);
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* ---------- tags ---------- */
+  .hashtags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 2rem;
+  }
+  .tag {
+    font-size: 0.85rem;
+    color: var(--medium-green);
+    background: rgba(158, 222, 163, 0.25);
+    padding: 0.25rem 0.65rem;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+
+  /* ---------- closing ---------- */
+  .closing {
+    margin-top: 1rem;
+    padding-top: 2.6rem;
+    border-top: 1px solid var(--line-strong);
+    text-align: center;
+  }
+  .closing p {
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 1.55;
+    color: var(--dark-green);
+    max-width: 46ch;
+    margin: 0 auto;
+  }
+  footer {
+    text-align: center;
+    padding: 2.2rem 1.5rem 3rem;
+    font-size: 0.82rem;
+    color: rgba(36, 48, 48, 0.5);
+    border-top: 1px solid var(--line);
+  }
+  @media (max-width: 480px) {
+    .hero { padding: 2rem 1.2rem 3rem; }
+    main { padding: 3rem 1.2rem 4rem; }
+    .trow { grid-template-columns: 1fr; gap: 0.4rem; }
+    .intro { font-size: 1.12rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="brandbar">
+  <img src="https://raw.githubusercontent.com/ahmloutfy/HiraLearning/refs/heads/main/assets/images/Logo.png" alt="Hira Learning Logo">
+</div>
+
+<header class="hero">
+  <div class="hero-letters">
+    <span>ق</span>
+    <span class="accent">ر</span>
+    <span>آ</span>
+    <span>ن</span>
+  </div>
+  <div class="hero-eyebrow">HIRA ACADEMY GUIDANCE</div>
+  <h1>Beyond the Scorecard: How Parents Can Effectively Track and Support Their Child’s Quranic Progress 📊✨</h1>
+</header>
+
+<main>
+  <div class="intro">
+    For non-Arabic-speaking parents, navigating their child's Quranic education can sometimes feel like walking through unfamiliar territory. When a child is learning complex phonetic structures, Tajweed rules, or memorizing chapters in a language the parents themselves may not speak fluently, measuring progress often defaults to a single metric: <strong>How many pages were completed this week?</strong>
+  </div>
+
+  <p>However, true progress in Quranic studies is rarely a straight line. True evaluation goes beyond raw numbers—it encompasses phonetic accuracy, retention, emotional connection, and personal effort. Learning how to track these subtle milestones helps parents become proactive, encouraging anchors in their child’s learning journey.</p>
+
+  <hr class="rule">
+
+  <section class="block">
+    <div class="block-head">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      </div>
+      <h2>🔍 Understanding the Four Pillars of Quranic Progress</h2>
+    </div>
+    
+    <p>When evaluating your child’s growth, looking at memorization speed alone provides an incomplete picture. A holistic view considers four distinct areas of development:</p>
+
+    <div class="table-wrap">
+      <div class="trow">
+        <div class="sounds">1. Phonetic Precision (Makharij)</div>
+        <div class="why">Moving from letter confusion to accurate articulation.</div>
+      </div>
+      <div class="trow">
+        <div class="sounds">2. Memorization Stability (Hifz)</div>
+        <div class="why">Retaining old surahs without frequent hesitations.</div>
+      </div>
+      <div class="trow">
+        <div class="sounds">3. Recitation Fluency (Tilawah)</div>
+        <div class="why">Connecting words smoothly with proper breathing & pacing.</div>
+      </div>
+      <div class="trow">
+        <div class="sounds">4. Spiritual & Emotional Connection</div>
+        <div class="why">Displaying enthusiasm and pride in their recitation time.</div>
+      </div>
+    </div>
+
+    <p style="margin-top: 1.5rem;">By recognizing growth in even one of these pillars—such as a child finally mastering the tricky sound of the letter <strong>'Ayn (<span class="arabic">ع</span>)</strong>—parents can celebrate meaningful success, even when new memorization moves at a slower pace.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section class="block">
+    <div class="block-head">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+      </div>
+      <h2>🚩 Recognizing Normal Plateaus vs. Learning Obstacles</h2>
+    </div>
+
+    <p>Every student encounters periods where learning seems to slow down. It is vital for parents to distinguish between a natural consolidation phase and a genuine difficulty requiring intervention.</p>
+
+    <blockquote class="quote">
+      "A temporary pause in memorization speed is often not a sign of failure, but a sign that the brain is working hard to solidify existing knowledge before moving forward."
+    </blockquote>
+
+    <p><strong>Normal Consolidation:</strong> The student spends extra time on a complex section (such as Surah Al-Mulk) to ensure old mistakes do not carry over.</p>
+    <p><strong>Overwhelming Fatigue:</strong> The student shows sudden anxiety or reluctance before class, often indicating that the current load or pace needs temporary adjustment.</p>
+    <p><strong>Phonetic Roadblocks:</strong> Persistent difficulty with specific sound pairs (like <strong>Sin <span class="arabic">س</span></strong> and <strong>Sad <span class="arabic">ص</span></strong>) that requires targeted speech training rather than extra repetition.</p>
+    
+    <p style="margin-top: 1.15rem;">When parents understand these nuances, they can offer targeted encouragement instead of inadvertent pressure.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section class="block">
+    <div class="block-head">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </div>
+      <h2>💬 Building a Productive Dialogue with Your Child's Tutor</h2>
+    </div>
+
+    <p>Parents do not need to speak Arabic to effectively monitor their child's classes. Open, regular communication with the teacher bridges the gap between home practice and virtual classroom goals.</p>
+
+    <p>Consider asking your child's tutor these constructive questions during progress check-ins:</p>
+
+    <ul class="custom-list">
+      <li>"Which specific letters or Tajweed rules is my child working on improving this month?"</li>
+      <li>"How is their retention during warm-up revision compared to new memorization?"</li>
+      <li>"What is one small habit we can reinforce at home to make your next lesson easier?"</li>
+    </ul>
+
+    <p>This collaborative approach ensures that home support aligns directly with professional instruction, creating a seamless environment for the child.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section class="block">
+    <div class="block-head">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      <h2>🌿 How Hira Academy Empowers Parents in the Tracking Process</h2>
+    </div>
+
+    <p>At Hira Academy, we eliminate the guesswork from tracking your child’s educational journey. Designed specifically for non-Arabic speaking families, our specialized curriculum integrates clear progress-tracking tools and regular teacher feedback. We provide parents with clear, actionable insights into their child's phonetic development, memorization stability, and Tajweed mastery. By combining expert instruction with transparent evaluation, "Hira" Academy ensures that parents remain informed, confident.</p>
+
+  </section>
+
+  <div class="closing">
+    <p>Empowering families on their journey to master Quranic recitation and memorization.</p>
+  </div>
+</main>
+
+<footer>
+  Hira Academy © 2026. All rights reserved.
+</footer>
+
+</body>
+</html>
