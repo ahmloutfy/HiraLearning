@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Small Slips, Big Meanings — Hira Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --dark-green: #243030;
+    --medium-green: #128559;
+    --light-green: #9edea3;
+    --cream: #fff2e5;
+    --line: rgba(36, 48, 48, 0.12);
+    --line-strong: rgba(36, 48, 48, 0.22);
+    --max: 700px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--cream); color: var(--dark-green); font-family: 'Poppins', sans-serif; font-weight: 400; font-size: 17px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  ::selection { background: var(--light-green); color: var(--dark-green); }
+  .arabic { font-family: 'Amiri', serif; direction: rtl; unicode-bidi: isolate; }
+  a { color: var(--medium-green); }
+  .brandbar { display: flex; align-items: center; justify-content: center; padding: 2.4rem 1.5rem 1.6rem; }
+  .brandbar img { height: 42px; width: auto; display: block; }
+  .hero { position: relative; padding: 2.5rem 1.5rem 4rem; text-align: center; border-bottom: 1px solid var(--line-strong); }
+  .hero-letters { font-family: 'Amiri', serif; direction: rtl; font-size: clamp(3.2rem, 13vw, 6rem); color: transparent; -webkit-text-stroke: 1.4px rgba(36, 48, 48, 0.35); line-height: 1; margin: 0 0 1.6rem; letter-spacing: 0.5rem; display: inline-flex; gap: 0.9rem; }
+  .hero-letters .accent { -webkit-text-stroke: 0; color: var(--medium-green); }
+  .hero-eyebrow { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.01em; color: var(--medium-green); margin: 0 0 1.3rem; }
+  .hero h1 { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: clamp(2rem, 5.2vw, 3rem); line-height: 1.16; max-width: 20ch; margin: 0 auto 1.2rem; color: var(--dark-green); }
+  main { max-width: var(--max); margin: 0 auto; padding: 4rem 1.5rem 6rem; }
+  .intro { font-weight: 500; font-size: 1.28rem; line-height: 1.55; color: var(--dark-green); border-left: 3px solid var(--medium-green); padding-left: 1.3rem; margin: 0 0 4.5rem; }
+  section.block { margin-bottom: 4.4rem; }
+  .block-head { display: flex; align-items: center; gap: 0.9rem; margin-bottom: 1.3rem; }
+  .icon { flex: none; width: 34px; height: 34px; color: var(--medium-green); }
+  .icon svg { width: 100%; height: 100%; }
+  h2 { font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 1.45rem; margin: 0; color: var(--dark-green); }
+  p { margin: 0 0 1.15rem; color: rgba(36, 48, 48, 0.82); }
+  p:last-child { margin-bottom: 0; }
+  strong { color: var(--dark-green); font-weight: 600; }
+  .rule { border: none; border-top: 1px solid var(--line-strong); margin: 4.4rem 0; }
+  .table-wrap { border-top: 1px solid var(--line-strong); margin: 1.5rem 0; }
+  .trow { display: grid; grid-template-columns: 200px 1fr; gap: 1.4rem; padding: 1.15rem 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+  .trow .sounds { font-size: 1.05rem; font-weight: 600; color: var(--medium-green); }
+  .trow .why { font-size: 0.97rem; color: rgba(36, 48, 48, 0.78); line-height: 1.55; }
+  ul.custom-list { list-style: none; padding: 0; margin: 1.5rem 0; }
+  ul.custom-list li { position: relative; padding-left: 1.8rem; margin-bottom: 1rem; color: rgba(36, 48, 48, 0.82); }
+  ul.custom-list li::before { content: "✨"; position: absolute; left: 0; top: 0; font-size: 0.9rem; }
+  blockquote.quote { font-style: italic; background: rgba(255, 255, 255, 0.45); border-left: 3px solid var(--medium-green); margin: 1.8rem 0; padding: 1.2rem 1.5rem; color: var(--dark-green); border-radius: 0 6px 6px 0; }
+  blockquote.quote cite { display: block; font-style: normal; font-size: 0.88rem; margin-top: 0.6rem; color: var(--medium-green); font-weight: 500; }
+  .hashtags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem; }
+  .tag { font-size: 0.85rem; color: var(--medium-green); background: rgba(158, 222, 163, 0.25); padding: 0.25rem 0.65rem; border-radius: 4px; font-weight: 500; }
+  .closing { margin-top: 1rem; padding-top: 2.6rem; border-top: 1px solid var(--line-strong); text-align: center; }
+  .closing p { font-weight: 500; font-size: 1.2rem; line-height: 1.55; color: var(--dark-green); max-width: 46ch; margin: 0 auto; }
+  footer { text-align: center; padding: 2.2rem 1.5rem 3rem; font-size: 0.82rem; color: rgba(36, 48, 48, 0.5); border-top: 1px solid var(--line); }
+  @media (max-width: 480px) {
+    .hero { padding: 2rem 1.2rem 3rem; }
+    main { padding: 3rem 1.2rem 4rem; }
+    .trow { grid-template-columns: 1fr; gap: 0.4rem; }
+    .intro { font-size: 1.12rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="brandbar">
+  <img src="https://raw.githubusercontent.com/ahmloutfy/HiraLearning/refs/heads/main/assets/images/Logo.png" alt="Hira Learning Logo">
+</div>
+
+<header class="hero">
+  <div class="hero-letters">
+    <span>ل</span>
+    <span class="accent">ح</span>
+    <span>ن</span>
+  </div>
+  <div class="hero-eyebrow">HIRA ACADEMY GUIDANCE</div>
+  <h1>Small Slips, Big Meanings: Understanding Lahn Jali and Lahn Khafi in the Recitation of Non-Native Learners 🌿</h1>
+</header>
+
+<main>
+  <div class="intro">
+    Every learner of the Quran carries a quiet hope: <strong>"Let me recite it the way it was revealed."</strong> For non-native Arabic speakers, that hope is often mixed with a worry: <em>"What if I make a mistake without knowing it?"</em>
+  </div>
+
+  <p>Take a breath. Recitation is a journey, and the word for a recitation error, <strong>Lahn</strong> (<span class="arabic">لحن</span>), simply names the places where that journey asks for more care. Understanding it is the first step toward overcoming it.</p>
+
+  <hr class="rule">
+
+  <section class="block">
+    <div class="block-head">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+      <h2>📖 What Is Lahn?</h2>
+    </div>
+    <p>In the science of Tajweed, <em>Lahn</em> means a deviation from the correct recitation of the Quran. Scholars divide it into two levels:</p>
+    <div class="table-wrap">
+      <div class="trow"><div class="sounds">Lahn Jali (<span class="arabic">اللحن الجلي</span>)</div><div class="why">The obvious error, easy for a listener to catch.</div></div>
+      <div class="trow"><div class="sounds">Lahn Khafi (<span class="arabic">اللحن الخفي</span>)</div><div class="why">The subtle, hidden error, noticed mainly by a trained ear.</div></div>
+    </div>
+    <blockquote class="quote">
+      "And recite the Quran with measured recitation."
+      <cite>Surah Al-Muzzammil, 73:4</cite>
+    </blockquote>
+    <p>This verse sets the standard. <em>Tartil</em> is not speed or showmanship. It is clarity, care, and presence.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section class="block">
+    <div class="block-head">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div>
+      <h2>🔍 Lahn Jali: The Error Anyone Can Hear</h2>
+    </div>
+    <p>Lahn Jali is a mistake that changes a letter, a vowel, or the meaning, and a trained listener can usually catch it right away. Common forms for non-native learners include:</p>
+    <ul class="custom-list">
+      <li>Replacing one letter with another that sounds similar to your ear</li>
+      <li>Changing a short vowel (<em>fatha, kasra, damma</em>)</li>
+      <li>Adding or dropping a letter or a vowel</li>
+    </ul>
+    <blockquote class="quote">
+      In Surah Al-Fatihah, the phrase <em>"an'amta 'alayhim"</em> (<span class="arabic">أَنْعَمْتَ عَلَيْهِمْ</span>), "You have favored them," is addressed to Allah with a <em>fatha</em> on the letter <em>ta</em>. If the <em>ta</em> is read with a <em>damma</em> (<em>an'amtu</em>), the speaker changes from "You" to "I," and the meaning is completely altered.
+    </blockquote>
+    <p>One short vowel can turn a prayer of praise into a different statement altogether. That is why these errors matter so much.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section class="block">
+    <div class="block-head">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10z"/><path d="M2 21c0-3 1.9-5.5 6-6.5"/></svg></div>
+      <h2>🌱 Lahn Khafi: The Error Only the Trained Ear Hears</h2>
+    </div>
+    <p>Lahn Khafi does not usually change the meaning, but it dulls the beauty and precision of the recitation. It is subtle, and many fluent readers are unaware of it. Examples include:</p>
+    <ul class="custom-list">
+      <li>Shortening a prolonged vowel (<em>madd</em>) or stretching it too much</li>
+      <li>Neglecting the nasal sound of <em>ghunnah</em></li>
+      <li>Pronouncing a heavy letter lightly, or a light letter heavily</li>
+      <li>Weakening the echoing bounce of <em>Qalqalah</em> letters (<span class="arabic">ق ط ب ج د</span>)</li>
+      <li>Rushing through a doubled letter (<em>shaddah</em>)</li>
+    </ul>
+    <blockquote class="quote">
+      The word <em>"al-hamd"</em> (<span class="arabic">الْحَمْد</span>) begins with the deep, breathy letter <em>Ha</em> (<span class="arabic">ح</span>). Many learners replace it with the lighter <em>Ha</em> (<span class="arabic">ه</span>) of English, a very natural slip for an English-trained mouth, and exactly the kind of habit a teacher helps you gently correct.
+    </blockquote>
+  </section>
+
+  <hr class="rule">
+
+  <section class="block">
+    <div class="block-head">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.2 1 2V18h6v-1.3c0-.8.4-1.5 1-2A7 7 0 0 0 12 2z"/></svg></div>
+      <h2>💡 Why Non-Native Learners Face These Errors</h2>
+    </div>
+    <p>This is not a sign of weakness. Your mouth has spent years shaping the sounds of another language. Arabic uses articulation points (<em>makharij</em>) that may not exist in your mother tongue, such as the throat letters (<span class="arabic">ع ح غ خ</span>), the emphatic letters (<span class="arabic">ص ض ط ظ</span>), and the unique letter <em>Qaf</em> (<span class="arabic">ق</span>).</p>
+    <p>Your tongue is not at fault. It simply has not yet been introduced to these sounds. With patient guidance, it learns.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section class="block">
+    <div class="block-head">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9z"/></svg></div>
+      <h2>🛠️ Practical Steps to Reduce Lahn</h2>
+    </div>
+    <ul class="custom-list">
+      <li><strong>Listen before you recite 🎧</strong> Listen repeatedly to a skilled reciter. The ear must learn the sound before the tongue can produce it.</li>
+      <li><strong>Slow down 🐢</strong> Speed hides mistakes. Slow, measured recitation lets you notice them.</li>
+      <li><strong>Record yourself 🎙️</strong> Compare your recording with your teacher's. The gap is your roadmap.</li>
+      <li><strong>Learn the makharij 👄</strong> Know where each letter comes from: the throat, tongue, lips, or nasal passage.</li>
+      <li><strong>Recite to a qualified teacher 🤝</strong> Tajweed is traditionally received through live correction. No app or video can fully replace a teacher's trained ear.</li>
+      <li><strong>Practice in small doses 🌤️</strong> Ten focused minutes each day are better than one exhausting hour each week.</li>
+    </ul>
+  </section>
+
+  <hr class="rule">
+
+  <section class="block">
+    <div class="block-head">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></div>
+      <h2>🤲 A Faith-Filled Reminder</h2>
+    </div>
+    <p>Fear of mistakes should never keep a learner away from the Quran. The Prophet ﷺ gave glad tidings to the one who struggles with recitation:</p>
+    <blockquote class="quote">
+      "The one who recites the Quran skillfully will be with the noble and obedient angels, and the one who recites it with difficulty, stumbling over it, will have a double reward."
+      <cite>Narrated by Al-Bukhari and Muslim</cite>
+    </blockquote>
+    <p>Effort is seen and valued. The goal is not perfection on the first attempt. It is sincerity, steady improvement, and love for the words of Allah.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section class="block">
+    <div class="block-head">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+      <h2>🌙 How "Hira" Academy Supports You</h2>
+    </div>
+    <p>At Hira Academy, we know a non-native learner's challenges begin with the mouth and the ear, not with ability. Our Tajweed curriculum is designed specifically for non-native speakers. It starts with articulation points and letter sounds, then moves gradually to common recitation errors, with each lesson tied to examples and exercises that match the sounds your tongue finds hardest. Our qualified teachers give live, personal correction in a patient and encouraging environment, so every learner builds both accuracy and confidence.</p>
+    <div class="hashtags">
+      <span class="tag">#Quran</span><span class="tag">#Tajweed</span><span class="tag">#LearnQuran</span><span class="tag">#QuranRecitation</span><span class="tag">#Lahn</span><span class="tag">#TajweedRules</span><span class="tag">#NonNativeArabicSpeakers</span><span class="tag">#QuranForKids</span><span class="tag">#IslamicEducation</span><span class="tag">#HiraAcademy</span><span class="tag">#Tartil</span><span class="tag">#QuranLearning</span>
+    </div>
+  </section>
+
+  <div class="closing">
+    <p>Patient guidance, one sound at a time, toward recitation with confidence and care.</p>
+  </div>
+</main>
+
+<footer>
+  Hira Academy © 2026. All rights reserved.
+</footer>
+
+</body>
+</html>
